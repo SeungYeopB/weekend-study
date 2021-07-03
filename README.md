@@ -1,0 +1,2 @@
+# weekend-study
+Learn Python
