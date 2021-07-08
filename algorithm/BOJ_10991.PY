@@ -1,3 +1,7 @@
-n = int(input())
-for i in range(n):
-    print(' '*(n-i-1) + "* "*(i+1))
+N = int(input())
+
+for i in range(1, N+1):
+    print(' '* (N-i), end = '')
+    for j in range(i): 
+        print('*', end = ' ')
+    print()
