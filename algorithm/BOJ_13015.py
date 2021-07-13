@@ -68,16 +68,32 @@
 # 13
 
 
-from sys import stdin
+# from sys import stdin
 
-arr = [int(stdin.readline().strip()) for _ in range(9)]
-arr.sort()
-total = sum(arr)
+# arr = [int(stdin.readline().strip()) for _ in range(9)]
+# arr.sort()
+# total = sum(arr)
 
-for i in range(len(arr)):
-    for j in range(i + 1, len(arr)):
-        if (total - arr[i] - arr[j]) == 100:
-            for k in range(len(arr)):
-                if k != i and k != j:
-                    print(arr[k])
-            exit()
+# for i in range(len(arr)):
+#     for j in range(i + 1, len(arr)):
+#         if (total - arr[i] - arr[j]) == 100:
+#             for k in range(len(arr)):
+#                 if k != i and k != j:
+#                     print(arr[k])
+
+s = []
+for i in range(9):
+    s.append(int(input()))
+sum_s = sum(s)
+one = 0
+two = 0
+for i in range(8):
+    for j in range(i + 1, 9):
+        if sum_s - (s[i] + s[j]) == 100:
+            one = s[i]
+            two = s[j]
+s.remove(one)
+s.remove(two)
+s.sort()
+for i in s:
+    print(i)
